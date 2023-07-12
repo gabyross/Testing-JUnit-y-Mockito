@@ -14,6 +14,7 @@ class CuentaTest {
         //cuenta.setPersona("Gaby");
         String esperado = "Gaby";
         String real = cuenta.getPersona();
+        assertNotNull(real); // debe existir persona, no puede ser nulo
         Assertions.assertEquals(esperado, real);
         assertEquals("Gaby", real); // si el real es upperCase, falla
     }
@@ -22,6 +23,7 @@ class CuentaTest {
     void testSaldoCuenta() {
         Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
         // Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("-1000.12345")); // simula falla por saldo menor a cero
+        assertNotNull(cuenta.getSaldo()); // verifica que el saldo no sea nulo
         assertEquals(1000.12345, cuenta.getSaldo().doubleValue());
         assertFalse(cuenta.getSaldo().compareTo(BigDecimal.ZERO) < 0); // saldo < 0 da error
         assertTrue(cuenta.getSaldo().compareTo(BigDecimal.ZERO) > 0); // saldo < 0 da error
@@ -40,4 +42,18 @@ class CuentaTest {
         sino, no falla porque en realidad comparamos el contenido y no las referencias */
         assertEquals(cuenta1, cuenta2);
     }
+
+    @Test
+    void testDebitoCuenta() {
+        Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
+        cuenta.debito(new BigDecimal(100)); // se le resta 100 a la cuenta corriente
+        assertNotNull(cuenta.getSaldo());
+        assertEquals(900, cuenta.getSaldo().intValue()); // es correcto
+
+        /* verifico si el saldo es igual en strings
+        como habia restado 100, el valor actual es 900 y no 1000 */
+        assertEquals("900.12345", cuenta.getSaldo().toPlainString()); // es correcto
+        //assertEquals("1000.12345", cuenta.getSaldo().toPlainString()); // genera falla
+    }
+
 }

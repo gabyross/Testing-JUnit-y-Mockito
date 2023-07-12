@@ -29,6 +29,16 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
+    public void  debito(BigDecimal monto){
+        BigDecimal nuevoSaldo = this.saldo.subtract(monto);
+        this.saldo = nuevoSaldo;
+
+    }
+
+    public void  credito(BigDecimal monto){
+        this.saldo = this.saldo.add(monto);
+    }
+
     @Override
     // en vez de comparar instancias, compara el objeto
     public boolean equals(Object obj) {

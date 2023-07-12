@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a259a66a-7bde-45bc-8951-528f4530ecd5" name="Changes" comment="ejemplo de test para saldo">
+    <list default="true" id="a259a66a-7bde-45bc-8951-528f4530ecd5" name="Changes" comment="test por referencia">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/gaby/junit5app/ejemplos/models/Banco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/gaby/junit5app/ejemplos/models/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gaby/junit5app/ejemplos/models/Cuenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/gaby/junit5app/ejemplos/models/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/gaby/junit5app/ejemplos/models/CuentaTest.java" afterDir="false" />
@@ -17,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,7 +52,7 @@
       <recent name="org.gaby.junit5app.ejemplos.models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CuentaTest.testReferenciaCuenta">
+  <component name="RunManager" selected="JUnit.CuentaTest.testDebitoCuenta">
     <configuration name="CuentaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit_app" />
       <extension name="coverage">
@@ -63,6 +64,22 @@
       <option name="PACKAGE_NAME" value="org.gaby.junit5app.ejemplos.models" />
       <option name="MAIN_CLASS_NAME" value="org.gaby.junit5app.ejemplos.models.CuentaTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CuentaTest.testDebitoCuenta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="junit_app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.gaby.junit5app.ejemplos.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.gaby.junit5app.ejemplos.models" />
+      <option name="MAIN_CLASS_NAME" value="org.gaby.junit5app.ejemplos.models.CuentaTest" />
+      <option name="METHOD_NAME" value="testDebitoCuenta" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,6 +134,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CuentaTest.testDebitoCuenta" />
         <item itemvalue="JUnit.CuentaTest.testReferenciaCuenta" />
         <item itemvalue="JUnit.CuentaTest.testSaldoCuenta" />
         <item itemvalue="JUnit.CuentaTest" />
@@ -154,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689171967184</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test por referencia">
+      <created>1689173018758</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689173018758</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +197,7 @@
     <MESSAGE value="ejemplo de test con funcionamiento correcto" />
     <MESSAGE value="ejemplo de test con simulacion de falla" />
     <MESSAGE value="ejemplo de test para saldo" />
-    <option name="LAST_COMMIT_MESSAGE" value="ejemplo de test para saldo" />
+    <MESSAGE value="test por referencia" />
+    <option name="LAST_COMMIT_MESSAGE" value="test por referencia" />
   </component>
 </project>
