@@ -15,7 +15,16 @@ class CuentaTest {
         String esperado = "Gaby";
         String real = cuenta.getPersona();
         Assertions.assertEquals(esperado, real);
-        assertTrue(real.equals("Gaby"));
+        assertEquals("Gaby", real); // si el real es upperCase, falla
+    }
+
+    @Test
+    void testSaldoCuenta() {
+        Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
+        // Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("-1000.12345")); // simula falla por saldo menor a cero
+        assertEquals(1000.12345, cuenta.getSaldo().doubleValue());
+        assertFalse(cuenta.getSaldo().compareTo(BigDecimal.ZERO) < 0); // saldo < 0 da error
+        assertTrue(cuenta.getSaldo().compareTo(BigDecimal.ZERO) > 0); // saldo < 0 da error
     }
 
 }

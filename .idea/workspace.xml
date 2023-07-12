@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a259a66a-7bde-45bc-8951-528f4530ecd5" name="Changes" comment="ejemplo de test con funcionamiento correcto">
+    <list default="true" id="a259a66a-7bde-45bc-8951-528f4530ecd5" name="Changes" comment="ejemplo de test para saldo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/gaby/junit5app/ejemplos/models/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gaby/junit5app/ejemplos/models/Cuenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/gaby/junit5app/ejemplos/models/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/gaby/junit5app/ejemplos/models/CuentaTest.java" afterDir="false" />
@@ -51,7 +51,7 @@
       <recent name="org.gaby.junit5app.ejemplos.models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CuentaTest">
+  <component name="RunManager" selected="JUnit.CuentaTest.testSaldoCuenta">
     <configuration name="CuentaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit_app" />
       <extension name="coverage">
@@ -83,8 +83,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CuentaTest.testSaldoCuenta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="junit_app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.gaby.junit5app.ejemplos.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.gaby.junit5app.ejemplos.models" />
+      <option name="MAIN_CLASS_NAME" value="org.gaby.junit5app.ejemplos.models.CuentaTest" />
+      <option name="METHOD_NAME" value="testSaldoCuenta" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CuentaTest.testSaldoCuenta" />
         <item itemvalue="JUnit.CuentaTest" />
         <item itemvalue="JUnit.CuentaTest.testNombreCuenta" />
       </list>
@@ -106,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689170681906</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ejemplo de test con simulacion de falla">
+      <created>1689170941404</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689170941404</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +146,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ejemplo de test con funcionamiento correcto" />
-    <option name="LAST_COMMIT_MESSAGE" value="ejemplo de test con funcionamiento correcto" />
+    <MESSAGE value="ejemplo de test con simulacion de falla" />
+    <MESSAGE value="ejemplo de test para saldo" />
+    <option name="LAST_COMMIT_MESSAGE" value="ejemplo de test para saldo" />
   </component>
 </project>
