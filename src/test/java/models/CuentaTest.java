@@ -2,9 +2,7 @@ package models;
 
 
 import exceptions.DineroInsuficienteException;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
 
@@ -13,17 +11,20 @@ import static org.junit.jupiter.api.Assertions.*;
 class CuentaTest {
 
     @Test
+    @DisplayName("probando el nombre de la cuenta")
     void testNombreCuenta() {
         Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
         //cuenta.setPersona("Gaby");
         String esperado = "Gaby";
         String real = cuenta.getPersona();
-        assertNotNull(real); // debe existir persona, no puede ser nulo
-        Assertions.assertEquals(esperado, real);
-        assertEquals("Gaby", real); // si el real es upperCase, falla
+        assertNotNull(real, () -> "La cuenta no puede ser nula"); // debe existir persona, no puede ser nulo
+        Assertions.assertEquals(esperado, real, () -> "El nombre de la cuenta no es el que se esperaba");
+        assertEquals("Gaby", real, () -> "Nombre cuenta esperada debe ser igual a la real"); // si el real es upperCase, falla
+        assertTrue(real.equals("Gaby"), () -> "Nombre cuenta esperada debe ser igual a la real"); // si el real es upperCase, falla
     }
 
     @Test
+    @DisplayName("probando el saldo de la cuenta")
     void testSaldoCuenta() {
         Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
         // Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("-1000.12345")); // simula falla por saldo menor a cero
@@ -34,6 +35,7 @@ class CuentaTest {
     }
 
     @Test
+    @DisplayName("testeando referencias que sean iguales con el metodo equals")
     void testReferenciaCuenta() {
         Cuenta cuenta1 = new Cuenta("Gaby", new BigDecimal("8900.9997"));
         Cuenta cuenta2 = new Cuenta("Gaby", new BigDecimal("8900.9997"));
@@ -48,6 +50,7 @@ class CuentaTest {
     }
 
     @Test
+    @DisplayName("probando debitar de una cuenta")
     void testDebitoCuenta() {
         Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
         cuenta.debito(new BigDecimal(100)); // se le resta 100 a la cuenta corriente
@@ -66,6 +69,7 @@ class CuentaTest {
     @Test
     @Tag("cuenta")
     @Tag("error")
+    @DisplayName("probando excepeciones de monto en cuenta")
     void testDineroInsuficienteExceptionCuenta() {
         Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
 
@@ -82,6 +86,7 @@ class CuentaTest {
     }
 
     @Test
+    @DisplayName("probando transferir dinero entre cuentas")
     void testTransferirDineroCuenta() {
         Cuenta cuenta1 = new Cuenta("Soto", new BigDecimal("2500"));
         Cuenta cuenta2 = new Cuenta("Gaby", new BigDecimal("1500.8989"));
@@ -95,7 +100,10 @@ class CuentaTest {
     }
 
     @Test
+    @Disabled // hace que se salte la prueba de este test
+    @DisplayName("probando relaciones entre las cuentas y el banco con assertAll")
     void testRelacionBancoCuentas() {
+        fail(); // forza que falle el test
         Cuenta cuenta1 = new Cuenta("Soto", new BigDecimal("2500"));
         Cuenta cuenta2 = new Cuenta("Gaby", new BigDecimal("1500.8989"));
 
@@ -109,13 +117,16 @@ class CuentaTest {
 
         assertAll(
                 () -> {
-                    assertEquals("1000.8989", cuenta2.getSaldo().toPlainString());
+                    assertEquals("1000.8989", cuenta2.getSaldo().toPlainString(),
+                            () -> "El valor de saldo de la cuenta2 no es el esperado");
                 },
                 () -> {
-                    assertEquals("3000", cuenta1.getSaldo().toPlainString());
+                    assertEquals("3000", cuenta1.getSaldo().toPlainString(),
+                            () -> "El valor de saldo de la cuenta1 no es el esperado");
                 },
                 () -> {
-                    assertEquals(2, banco.getCuentas().size());
+                    assertEquals(2, banco.getCuentas().size(),
+                            () -> "El banco no tiene las cuentas esperadas");
                 },
                 () -> {
                     assertEquals("Banco del Estado.", cuenta1.getBanco().getNombre());
