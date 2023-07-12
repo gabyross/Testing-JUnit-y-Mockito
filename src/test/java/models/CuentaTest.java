@@ -107,18 +107,34 @@ class CuentaTest {
         banco.setNombre("Banco del Estado");
         banco.transferir(cuenta1, cuenta2, new BigDecimal(500));
 
-        assertEquals(2, banco.getCuentas().size());
-        assertEquals("Banco del Estado", cuenta1.getBanco().getNombre());
+        assertAll(
+                () -> {
+                    assertEquals("1000.8989", cuenta2.getSaldo().toPlainString());
+                },
+                () -> {
+                    assertEquals("3000", cuenta1.getSaldo().toPlainString());
+                },
+                () -> {
+                    assertEquals(2, banco.getCuentas().size());
+                },
+                () -> {
+                    assertEquals("Banco del Estado.", cuenta1.getBanco().getNombre());
+                },
 
-        // encuentra el usuario gaby en la lista de cuentas del banco
-        assertEquals("Gaby", banco.getCuentas().stream()
-                .filter(c -> c.getPersona().equals("Gaby"))
-                .findFirst().get().getPersona()
-        );
+                // encuentra el usuario gaby en la lista de cuentas del banco
+                () -> {
+                    assertEquals("Gaby", banco.getCuentas().stream()
+                            .filter(c -> c.getPersona().equals("Gaby"))
+                            .findFirst().get().getPersona()
+                    );
+                },
 
-        // ve si hay algun match con gaby en la lista de cuentas del banco
-        assertTrue(banco.getCuentas().stream()
-                .anyMatch(c -> c.getPersona().equals("Gaby"))
+                // ve si hay algun match con gaby en la lista de cuentas del banco
+                () -> {
+                    assertTrue(banco.getCuentas().stream()
+                            .anyMatch(c -> c.getPersona().equals("Gaby"))
+                    );
+                }
         );
     }
 
