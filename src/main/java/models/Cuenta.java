@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 public class Cuenta {
     private String persona;
     private BigDecimal saldo;
+    private Banco banco;
 
     public Cuenta(String persona, BigDecimal saldo) {
         //this.persona = persona.toUpperCase(); simulacion de falla
@@ -31,16 +32,24 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
-    public void debito(BigDecimal monto){
+    public Banco getBanco() {
+        return banco;
+    }
+
+    public void setBanco(Banco banco) {
+        this.banco = banco;
+    }
+
+    public void debito(BigDecimal monto) {
         BigDecimal nuevoSaldo = this.saldo.subtract(monto);
-        if (nuevoSaldo.compareTo(BigDecimal.ZERO) < 0){
+        if (nuevoSaldo.compareTo(BigDecimal.ZERO) < 0) {
             throw new DineroInsuficienteException("Dinero Insuficiente");
         }
         this.saldo = nuevoSaldo;
 
     }
 
-    public void credito(BigDecimal monto){
+    public void credito(BigDecimal monto) {
         this.saldo = this.saldo.add(monto);
     }
 
