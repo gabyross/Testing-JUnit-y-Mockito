@@ -1,4 +1,4 @@
-package org.gaby.junit5app.ejemplos.models;
+package models;
 
 import exceptions.DineroInsuficienteException;
 

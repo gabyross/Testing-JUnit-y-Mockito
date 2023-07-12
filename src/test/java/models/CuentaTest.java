@@ -1,4 +1,5 @@
-package org.gaby.junit5app.ejemplos.models;
+package models;
+
 
 import exceptions.DineroInsuficienteException;
 import org.junit.jupiter.api.Assertions;
