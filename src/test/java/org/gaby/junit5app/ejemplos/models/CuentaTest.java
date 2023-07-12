@@ -11,7 +11,7 @@ class CuentaTest {
     @Test
     void testNombreCuenta(){
         Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
-        cuenta.setPersona("Gaby");
+        //cuenta.setPersona("Gaby");
         String esperado = "Gaby";
         String real = cuenta.getPersona();
         Assertions.assertEquals(esperado, real);
