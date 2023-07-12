@@ -1,5 +1,7 @@
 package org.gaby.junit5app.ejemplos.models;
 
+import exceptions.DineroInsuficienteException;
+
 import java.math.BigDecimal;
 //import java.util.Locale;
 
@@ -29,13 +31,16 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
-    public void  debito(BigDecimal monto){
+    public void debito(BigDecimal monto){
         BigDecimal nuevoSaldo = this.saldo.subtract(monto);
+        if (nuevoSaldo.compareTo(BigDecimal.ZERO) < 0){
+            throw new DineroInsuficienteException("Dinero Insuficiente");
+        }
         this.saldo = nuevoSaldo;
 
     }
 
-    public void  credito(BigDecimal monto){
+    public void credito(BigDecimal monto){
         this.saldo = this.saldo.add(monto);
     }
 

@@ -1,6 +1,8 @@
 package org.gaby.junit5app.ejemplos.models;
 
+import exceptions.DineroInsuficienteException;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -47,6 +49,9 @@ class CuentaTest {
     void testDebitoCuenta() {
         Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
         cuenta.debito(new BigDecimal(100)); // se le resta 100 a la cuenta corriente
+
+        // cuenta.debito(new BigDecimal(2000)); // tira exception por dinero insuficiente
+
         assertNotNull(cuenta.getSaldo());
         assertEquals(900, cuenta.getSaldo().intValue()); // es correcto
 
@@ -54,6 +59,24 @@ class CuentaTest {
         como habia restado 100, el valor actual es 900 y no 1000 */
         assertEquals("900.12345", cuenta.getSaldo().toPlainString()); // es correcto
         //assertEquals("1000.12345", cuenta.getSaldo().toPlainString()); // genera falla
+    }
+
+    @Test
+    @Tag("cuenta")
+    @Tag("error")
+    void testDineroInsuficienteExceptionCuenta() {
+        Cuenta cuenta = new Cuenta("Gaby", new BigDecimal("1000.12345"));
+
+        // simulamos el error, en la cuenta no hay 1500
+        Exception exception = assertThrows(DineroInsuficienteException.class, () -> {
+            cuenta.debito(new BigDecimal(1500));
+        });
+        String actual = exception.getMessage();
+        String esperado = "Dinero Insuficiente";
+
+        //si cambio el mensaje no pasa la prueba
+        // String esperado = "Dinero Insuficiente en la cuenta"; // falla
+        assertEquals(esperado, actual);
     }
 
 }

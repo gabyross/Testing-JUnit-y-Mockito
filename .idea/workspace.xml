@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a259a66a-7bde-45bc-8951-528f4530ecd5" name="Changes" comment="test por referencia">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/gaby/junit5app/ejemplos/models/Banco.java" afterDir="false" />
+    <list default="true" id="a259a66a-7bde-45bc-8951-528f4530ecd5" name="Changes" comment="test para debito  credito agregado">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/DineroInsuficienteException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/gaby/junit5app/ejemplos/models/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gaby/junit5app/ejemplos/models/Cuenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/gaby/junit5app/ejemplos/models/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/gaby/junit5app/ejemplos/models/CuentaTest.java" afterDir="false" />
@@ -84,7 +84,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CuentaTest.testNombreCuenta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CuentaTest.testDineroInsuficienteExceptionCuenta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit_app" />
       <extension name="coverage">
         <pattern>
@@ -94,7 +94,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.gaby.junit5app.ejemplos.models" />
       <option name="MAIN_CLASS_NAME" value="org.gaby.junit5app.ejemplos.models.CuentaTest" />
-      <option name="METHOD_NAME" value="testNombreCuenta" />
+      <option name="METHOD_NAME" value="testDineroInsuficienteExceptionCuenta" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -135,10 +135,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CuentaTest.testDebitoCuenta" />
+        <item itemvalue="JUnit.CuentaTest.testDineroInsuficienteExceptionCuenta" />
         <item itemvalue="JUnit.CuentaTest.testReferenciaCuenta" />
         <item itemvalue="JUnit.CuentaTest.testSaldoCuenta" />
         <item itemvalue="JUnit.CuentaTest" />
-        <item itemvalue="JUnit.CuentaTest.testNombreCuenta" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689173018758</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test para debito  credito agregado">
+      <created>1689175212027</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689175212027</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,6 +205,7 @@
     <MESSAGE value="ejemplo de test con simulacion de falla" />
     <MESSAGE value="ejemplo de test para saldo" />
     <MESSAGE value="test por referencia" />
-    <option name="LAST_COMMIT_MESSAGE" value="test por referencia" />
+    <MESSAGE value="test para debito  credito agregado" />
+    <option name="LAST_COMMIT_MESSAGE" value="test para debito  credito agregado" />
   </component>
 </project>
