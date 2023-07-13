@@ -40,4 +40,4 @@ out/
 /docker-images
 
 ### SSL credentials ###
-/src/main/resources/ssl
+/Junit5_app/src/main/resources/ssl

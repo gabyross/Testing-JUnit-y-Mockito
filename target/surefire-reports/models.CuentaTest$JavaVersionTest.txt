@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: models.CuentaTest$JavaVersionTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.03 s - in models.CuentaTest$JavaVersionTest
